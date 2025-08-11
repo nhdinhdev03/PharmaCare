@@ -14,13 +14,12 @@ public class ProductDAO {
          ResultSet rs = ps.executeQuery()) {
       List<Product> list = new ArrayList<>();
       while (rs.next()) {
-        Product p = new Product();
-        p.setProductId(rs.getInt("ProductId"));
-        p.setName(rs.getString("Name"));
-        p.setUnitPrice(rs.getDouble("UnitPrice"));
-        p.setStock(rs.getInt("Stock"));
-        p.setActive(rs.getBoolean("IsActive"));
-        list.add(p);
+        list.add(new Product(
+          rs.getInt("ProductId"),
+          rs.getString("Name"),
+          rs.getDouble("UnitPrice"),
+          rs.getInt("Stock"),
+          rs.getBoolean("IsActive")));
       }
       return list;
     }

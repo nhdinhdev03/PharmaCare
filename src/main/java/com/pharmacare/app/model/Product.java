@@ -7,6 +7,11 @@ public class Product {
   private int stock;
   private boolean active;
 
+  public Product(){}
+  public Product(Integer id, String name, double price, int stock, boolean active){
+    this.productId=id; this.name=name; this.unitPrice=price; this.stock=stock; this.active=active;
+  }
+
   public Integer getProductId() { return productId; }
   public void setProductId(Integer id) { this.productId = id; }
   public String getName() { return name; }
